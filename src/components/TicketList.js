@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Ticket from "./Ticket";
 import { useSelector } from 'react-redux';
-import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
+import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
 
 function TicketList(props){
   useFirestoreConnect([
@@ -28,12 +28,12 @@ function TicketList(props){
       </React.Fragment>
   ); 
 } else {
-  return (
-    <React.Fragment>
-      <h3>Loading ... </h3>
-    </React.Fragment>
-  )
- }
+    return (
+      <React.Fragment>
+        <h3>Loading ... </h3>
+      </React.Fragment>
+    )
+  }
 }
 
 TicketList.propTypes = {
