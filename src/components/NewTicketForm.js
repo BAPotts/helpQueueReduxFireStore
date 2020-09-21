@@ -13,6 +13,7 @@ function NewTicketForm(props) {
     event.preventDefault();
     props.onNewTicketCreation();
 
+    console.log(event.target.names.value)
     return firestore.collection('tickets').add(
       {
         names: event.target.names.value,
@@ -21,6 +22,7 @@ function NewTicketForm(props) {
         timeOpen: firestore.FieldValue.serverTimestamp()
       }
     );
+
   }
 
   // function handleNewTicketFormSubmission(event) {
